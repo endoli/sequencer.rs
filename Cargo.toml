@@ -1,0 +1,12 @@
+[package]
+name = "sequencer"
+version = "0.0.1"
+authors = ["Bruce Mitchener <bruce.mitchener@gmail.com>"]
+license = "MIT/Apache-2.0"
+readme = "README.md"
+description = ""
+keywords = ["commands", "script", "macro"]
+homepage = "https://github.com/endoli/sequencer.rs"
+repository = "https://github.com/endoli/sequencer.rs"
+
+[dependencies]
