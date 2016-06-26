@@ -1,0 +1,1 @@
+initSidebarItems({"trait":[["Action","An action to be executed."]]});
