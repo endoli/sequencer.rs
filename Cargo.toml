@@ -4,8 +4,7 @@ version = "0.0.1"
 authors = ["Bruce Mitchener <bruce.mitchener@gmail.com>"]
 license = "MIT/Apache-2.0"
 readme = "README.md"
-description = "Sequencer provides a mechanism for executing sequences of
-actions in a flexible way. Sequencer is useful for automating some types of workflow or as the basis for a macro system for an application."
+description = "Sequencer provides a mechanism for executing sequences of actions in a flexible way. Sequencer is useful for automating some types of workflow or as the basis for a macro system for an application."
 keywords = ["commands", "script", "macro"]
 documentation = "http://endoli.github.io/sequencer.rs/"
 homepage = "https://github.com/endoli/sequencer.rs"
