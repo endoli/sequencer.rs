@@ -4,7 +4,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-use action::Action;
+use action::{Action, StepStatus};
 
 /// A sequence of [actions].
 ///
@@ -25,7 +25,7 @@ impl Action for Sequence {
         }
     }
 
-    fn step(&mut self) -> bool {
+    fn step(&mut self) -> StepStatus {
         let previous = self.step;
         let next = match previous {
             Some(step) => step + 1,
@@ -35,7 +35,11 @@ impl Action for Sequence {
         if next < self.actions.len() {
             self.actions[next].execute();
         }
-        next >= self.actions.len()
+        if next >= self.actions.len() {
+            StepStatus::Complete
+        } else {
+            StepStatus::Incomplete
+        }
     }
 }
 

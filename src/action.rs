@@ -4,6 +4,14 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
+/// The result of `Action.step`.
+pub enum StepStatus {
+    /// Stepping is incomplete and should be called again.
+    Incomplete,
+    /// Stepping this action is complete.
+    Complete,
+}
+
 /// An action to be executed.
 pub trait Action {
     /// Execute the action.
@@ -22,8 +30,8 @@ pub trait Action {
     /// of actions.
     ///
     /// [`Sequence`]: struct.Sequence.html
-    fn step(&mut self) -> bool {
+    fn step(&mut self) -> StepStatus {
         self.execute();
-        true
+        StepStatus::Complete
     }
 }
