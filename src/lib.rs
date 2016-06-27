@@ -21,15 +21,15 @@
 //!
 //! Near term future plans:
 //!
-//! * Add a `Loop` action which has a child `Action` (which
-//!   can be a `Sequence`). This would provide for looping
+//! * Add a `Loop` action which has a child [`Action`], which
+//!   can be a [`Sequence`]. This would provide for looping
 //!   until a terminating condition is true.
 //! * Add a `Range` action which is similar to `Loop`, but
 //!   is explicitly iterating over the elements of a
 //!   collection or a range of numbers, such as 1 through 10.
 //! * Add a `Timeline` action which allows for scheduling
 //!   actions to be executed at particular points in time.
-//!   It should be executed via `step` rather than `execute`.
+//!   It should be executed via [`step`] rather than [`execute`].
 //!
 //! Some open questions:
 //!
@@ -39,6 +39,12 @@
 //!   are rich text.
 //! * Whether or not we should deal with return values from
 //!   an action and allow them to be fed into a subsequent action.
+//!
+//! [`Action`]: trait.Action.html
+//! [`execute`]: trait.Action.html#tymethod.execute
+//! [`Sequence`]: struct.Sequence.html
+//! [`step`]: trait.Action.html#method.step
+
 #![warn(missing_docs)]
 #![deny(trivial_numeric_casts,
         unsafe_code, unstable_features,
