@@ -41,6 +41,14 @@ impl Action for Sequence {
             StepStatus::Complete
         }
     }
+
+    fn summary(&self) -> String {
+        String::from("Sequence")
+    }
+
+    fn description(&self) -> String {
+        String::from("A sequence of actions.")
+    }
 }
 
 #[cfg(test)]

@@ -35,4 +35,10 @@ pub trait Action {
         self.execute();
         StepStatus::Complete
     }
+
+    /// A brief summary / title for this action.
+    fn summary(&self) -> String;
+
+    /// A more detailed description of this action.
+    fn description(&self) -> String;
 }

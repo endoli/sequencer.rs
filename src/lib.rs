@@ -12,6 +12,10 @@
 //! Sequencer is useful for automating some types of workflow
 //! or as the basis for a macro system for an application.
 //!
+//! Actions can provide textual descriptions of what they are and
+//! what they are doing, so the application can provide a richer
+//! UI, informing the user of what is going to happen.
+//!
 //! Currently, only actions or sequences of actions can be
 //! executed. Sequences can be nested.
 //!
