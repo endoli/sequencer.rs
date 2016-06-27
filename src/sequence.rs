@@ -31,14 +31,14 @@ impl Action for Sequence {
             Some(step) => step + 1,
             None => 0,
         };
-        self.step = Some(next);
         if next < self.actions.len() {
-            self.actions[next].execute();
-        }
-        if next >= self.actions.len() {
-            StepStatus::Complete
+            let r = self.actions[next].step();
+            if r == StepStatus::Complete {
+                self.step = Some(next);
+            }
+            r
         } else {
-            StepStatus::Incomplete
+            StepStatus::Complete
         }
     }
 }
