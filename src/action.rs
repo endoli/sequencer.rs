@@ -5,6 +5,7 @@
 // except according to those terms.
 
 /// The result of `Action.step`.
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum StepStatus {
     /// Stepping is incomplete and should be called again.
     Incomplete,
