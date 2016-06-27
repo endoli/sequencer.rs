@@ -39,6 +39,7 @@
 //!   are rich text.
 //! * Whether or not we should deal with return values from
 //!   an action and allow them to be fed into a subsequent action.
+//! * Consider removing [`execute`] and only having [`step`].
 //!
 //! [`Action`]: trait.Action.html
 //! [`execute`]: trait.Action.html#tymethod.execute
