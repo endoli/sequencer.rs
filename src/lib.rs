@@ -16,6 +16,15 @@
 //! what they are doing, so the application can provide a richer
 //! UI, informing the user of what is going to happen.
 //!
+//! Possible uses:
+//!
+//! * Sequencing animations or effects.
+//! * Recording actions as they're performed within an application
+//!   for playback, editing or repeating. An example of this can
+//!   be seen in [Bret Victor]'s [Talk Addendum] about his Drawing Dynamic
+//!   Visualizations work as well as applications like [Reform] which have
+//!   been inspired by it. (This approach was also used in [Data Wrangler].)
+//!
 //! Currently, only actions or sequences of actions can be
 //! executed. Sequences can be nested.
 //!
@@ -42,9 +51,13 @@
 //! * Consider removing [`execute`] and only having [`step`].
 //!
 //! [`Action`]: trait.Action.html
+//! [Bret Victor]: http://worrydream.com/
+//! [Data Wrangler]: http://vis.stanford.edu/wrangler/
 //! [`execute`]: trait.Action.html#tymethod.execute
+//! [Reform]: https://github.com/laszlokorte/reform-swift
 //! [`Sequence`]: struct.Sequence.html
 //! [`step`]: trait.Action.html#method.step
+//! [Talk Addendum]: http://worrydream.com/DrawingDynamicVisualizationsTalkAddendum/
 
 #![warn(missing_docs)]
 #![deny(trivial_numeric_casts,
