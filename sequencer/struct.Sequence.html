@@ -47,7 +47,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-14' class='srclink' href='../src/sequencer/src/sequence.rs.html#16-19' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-37' class='srclink' href='../src/sequencer/src/sequence.rs.html#16-19' title='goto source code'>[src]</a></span></h1>
 <pre class='rust struct'>pub struct Sequence {
     // some fields omitted
 }</pre><div class='docblock'><p>A sequence of <a href="trait.Action.html">actions</a>.</p>
@@ -56,7 +56,9 @@
 can be nested within themselves to provide some structure
 or hierarchy.</p>
 </div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='../sequencer/trait.Action.html' title='sequencer::Action'>Action</a> for <a class='struct' href='../sequencer/struct.Sequence.html' title='sequencer::Sequence'>Sequence</a></code></h3><div class='impl-items'><h4 id='method.execute' class='method'><code>fn <a href='../sequencer/trait.Action.html#tymethod.execute' class='fnname'>execute</a>(&amp;self)</code></h4>
-<h4 id='method.step' class='method'><code>fn <a href='../sequencer/trait.Action.html#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h4>
+<h4 id='method.step' class='method'><code>fn <a href='../sequencer/trait.Action.html#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; StepStatus</code></h4>
+<h4 id='method.summary' class='method'><code>fn <a href='../sequencer/trait.Action.html#tymethod.summary' class='fnname'>summary</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
+<h4 id='method.description' class='method'><code>fn <a href='../sequencer/trait.Action.html#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h4>
 </div></section>
     <section id='search' class="content hidden"></section>
 

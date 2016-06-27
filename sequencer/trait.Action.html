@@ -47,11 +47,13 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-6' class='srclink' href='../src/sequencer/src/action.rs.html#8-29' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-25' class='srclink' href='../src/sequencer/src/action.rs.html#17-44' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait Action {
     fn <a href='#tymethod.execute' class='fnname'>execute</a>(&amp;self);
+    fn <a href='#tymethod.summary' class='fnname'>summary</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>;
+    fn <a href='#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a>;
 
-    fn <a href='#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a> { ... }
+    fn <a href='#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; StepStatus { ... }
 }</pre><div class='docblock'><p>An action to be executed.</p>
 </div>
             <h2 id='required-methods'>Required Methods</h2>
@@ -59,10 +61,12 @@
         <h3 id='tymethod.execute' class='method stab '><code>fn <a href='#tymethod.execute' class='fnname'>execute</a>(&amp;self)</code></h3><div class='docblock'><p>Execute the action.</p>
 
 <p>This is typically invoked by the <a href="struct.Sequence.html"><code>Sequence</code></a>.</p>
+</div><h3 id='tymethod.summary' class='method stab '><code>fn <a href='#tymethod.summary' class='fnname'>summary</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h3><div class='docblock'><p>A brief summary / title for this action.</p>
+</div><h3 id='tymethod.description' class='method stab '><code>fn <a href='#tymethod.description' class='fnname'>description</a>(&amp;self) -&gt; <a class='struct' href='https://doc.rust-lang.org/nightly/collections/string/struct.String.html' title='collections::string::String'>String</a></code></h3><div class='docblock'><p>A more detailed description of this action.</p>
 </div></div>
             <h2 id='provided-methods'>Provided Methods</h2>
             <div class='methods'>
-        <h3 id='method.step' class='method stab '><code>fn <a href='#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.bool.html'>bool</a></code></h3><div class='docblock'><p>Execute one step of an action.</p>
+        <h3 id='method.step' class='method stab '><code>fn <a href='#method.step' class='fnname'>step</a>(&amp;mut self) -&gt; StepStatus</code></h3><div class='docblock'><p>Execute one step of an action.</p>
 
 <p>Some actions may consist of multiple steps and the
 user may want to walk through them individually.</p>

@@ -88,6 +88,18 @@
 <span id="44">44</span>
 <span id="45">45</span>
 <span id="46">46</span>
+<span id="47">47</span>
+<span id="48">48</span>
+<span id="49">49</span>
+<span id="50">50</span>
+<span id="51">51</span>
+<span id="52">52</span>
+<span id="53">53</span>
+<span id="54">54</span>
+<span id="55">55</span>
+<span id="56">56</span>
+<span id="57">57</span>
+<span id="58">58</span>
 </pre><pre class='rust '>
 <span class='comment'>// Licensed under the Apache License, Version 2.0 &lt;LICENSE-APACHE or</span>
 <span class='comment'>// http://www.apache.org/licenses/LICENSE-2.0&gt; or the MIT license</span>
@@ -95,7 +107,7 @@
 <span class='comment'>// option. This file may not be copied, modified, or distributed</span>
 <span class='comment'>// except according to those terms.</span>
 
-<span class='kw'>use</span> <span class='ident'>action</span>::<span class='ident'>Action</span>;
+<span class='kw'>use</span> <span class='ident'>action</span>::{<span class='ident'>Action</span>, <span class='ident'>StepStatus</span>};
 
 <span class='doccomment'>/// A sequence of [actions].</span>
 <span class='doccomment'>///</span>
@@ -116,17 +128,29 @@
         }
     }
 
-    <span class='kw'>fn</span> <span class='ident'>step</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>bool</span> {
+    <span class='kw'>fn</span> <span class='ident'>step</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>StepStatus</span> {
         <span class='kw'>let</span> <span class='ident'>previous</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>step</span>;
         <span class='kw'>let</span> <span class='ident'>next</span> <span class='op'>=</span> <span class='kw'>match</span> <span class='ident'>previous</span> {
             <span class='prelude-val'>Some</span>(<span class='ident'>step</span>) <span class='op'>=&gt;</span> <span class='ident'>step</span> <span class='op'>+</span> <span class='number'>1</span>,
             <span class='prelude-val'>None</span> <span class='op'>=&gt;</span> <span class='number'>0</span>,
         };
-        <span class='self'>self</span>.<span class='ident'>step</span> <span class='op'>=</span> <span class='prelude-val'>Some</span>(<span class='ident'>next</span>);
         <span class='kw'>if</span> <span class='ident'>next</span> <span class='op'>&lt;</span> <span class='self'>self</span>.<span class='ident'>actions</span>.<span class='ident'>len</span>() {
-            <span class='self'>self</span>.<span class='ident'>actions</span>[<span class='ident'>next</span>].<span class='ident'>execute</span>();
+            <span class='kw'>let</span> <span class='ident'>r</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>actions</span>[<span class='ident'>next</span>].<span class='ident'>step</span>();
+            <span class='kw'>if</span> <span class='ident'>r</span> <span class='op'>==</span> <span class='ident'>StepStatus</span>::<span class='ident'>Complete</span> {
+                <span class='self'>self</span>.<span class='ident'>step</span> <span class='op'>=</span> <span class='prelude-val'>Some</span>(<span class='ident'>next</span>);
+            }
+            <span class='ident'>r</span>
+        } <span class='kw'>else</span> {
+            <span class='ident'>StepStatus</span>::<span class='ident'>Complete</span>
         }
-        <span class='ident'>next</span> <span class='op'>&gt;=</span> <span class='self'>self</span>.<span class='ident'>actions</span>.<span class='ident'>len</span>()
+    }
+
+    <span class='kw'>fn</span> <span class='ident'>summary</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+        <span class='ident'>String</span>::<span class='ident'>from</span>(<span class='string'>&quot;Sequence&quot;</span>)
+    }
+
+    <span class='kw'>fn</span> <span class='ident'>description</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>String</span> {
+        <span class='ident'>String</span>::<span class='ident'>from</span>(<span class='string'>&quot;A sequence of actions.&quot;</span>)
     }
 }
 
