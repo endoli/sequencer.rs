@@ -47,22 +47,17 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/sequencer/src/lib.rs.html#7-77' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-0' class='srclink' href='../src/sequencer/src/lib.rs.html#7-76' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='sequencer' class='section-header'><a href='#sequencer'>Sequencer</a></h1>
 <p>Sequencer provides a mechanism for executing sequences of
 actions in a flexible way.</p>
 
-<p>Sequencer is useful for automating some types of workflow
-or as the basis for a macro system for an application.</p>
-
-<p>Actions can provide textual descriptions of what they are and
-what they are doing, so the application can provide a richer
-UI, informing the user of what is going to happen.</p>
-
 <p>Possible uses:</p>
 
 <ul>
+<li>Workflow automation.</li>
+<li>The basis of a macro system for an application.</li>
 <li>Sequencing animations or effects.</li>
 <li>Recording actions as they&#39;re performed within an application
 for playback, editing or repeating. An example of this can
@@ -70,6 +65,10 @@ be seen in <a href="http://worrydream.com/">Bret Victor</a>&#39;s <a href="http:
 Visualizations work as well as applications like <a href="https://github.com/laszlokorte/reform-swift">Reform</a> which have
 been inspired by it. (This approach was also used in <a href="http://vis.stanford.edu/wrangler/">Data Wrangler</a>.)</li>
 </ul>
+
+<p>Actions can provide textual descriptions of what they are and
+what they are doing, so the application can provide a richer
+UI, informing the user of what is going to happen.</p>
 
 <p>Currently, only actions or sequences of actions can be
 executed. Sequences can be nested.</p>
