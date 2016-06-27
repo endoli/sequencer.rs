@@ -47,7 +47,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a id='src-0' class='srclink' href='../src/sequencer/src/lib.rs.html#7-57' title='goto source code'>[src]</a></span></h1>
+               </span><a id='src-0' class='srclink' href='../src/sequencer/src/lib.rs.html#7-77' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'>
 <h1 id='sequencer' class='section-header'><a href='#sequencer'>Sequencer</a></h1>
 <p>Sequencer provides a mechanism for executing sequences of
@@ -60,21 +60,32 @@ or as the basis for a macro system for an application.</p>
 what they are doing, so the application can provide a richer
 UI, informing the user of what is going to happen.</p>
 
+<p>Possible uses:</p>
+
+<ul>
+<li>Sequencing animations or effects.</li>
+<li>Recording actions as they&#39;re performed within an application
+for playback, editing or repeating. An example of this can
+be seen in <a href="http://worrydream.com/">Bret Victor</a>&#39;s <a href="http://worrydream.com/DrawingDynamicVisualizationsTalkAddendum/">Talk Addendum</a> about his Drawing Dynamic
+Visualizations work as well as applications like <a href="https://github.com/laszlokorte/reform-swift">Reform</a> which have
+been inspired by it. (This approach was also used in <a href="http://vis.stanford.edu/wrangler/">Data Wrangler</a>.)</li>
+</ul>
+
 <p>Currently, only actions or sequences of actions can be
 executed. Sequences can be nested.</p>
 
 <p>Near term future plans:</p>
 
 <ul>
-<li>Add a <code>Loop</code> action which has a child <code>Action</code> (which
-can be a <code>Sequence</code>). This would provide for looping
+<li>Add a <code>Loop</code> action which has a child <a href="trait.Action.html"><code>Action</code></a>, which
+can be a <a href="struct.Sequence.html"><code>Sequence</code></a>. This would provide for looping
 until a terminating condition is true.</li>
 <li>Add a <code>Range</code> action which is similar to <code>Loop</code>, but
 is explicitly iterating over the elements of a
 collection or a range of numbers, such as 1 through 10.</li>
 <li>Add a <code>Timeline</code> action which allows for scheduling
 actions to be executed at particular points in time.
-It should be executed via <code>step</code> rather than <code>execute</code>.</li>
+It should be executed via <a href="trait.Action.html#method.step"><code>step</code></a> rather than <a href="trait.Action.html#tymethod.execute"><code>execute</code></a>.</li>
 </ul>
 
 <p>Some open questions:</p>
@@ -86,6 +97,7 @@ any sort of cross-thread interaction?</li>
 are rich text.</li>
 <li>Whether or not we should deal with return values from
 an action and allow them to be fed into a subsequent action.</li>
+<li>Consider removing <a href="trait.Action.html#tymethod.execute"><code>execute</code></a> and only having <a href="trait.Action.html#method.step"><code>step</code></a>.</li>
 </ul>
 </div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
