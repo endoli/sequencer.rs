@@ -9,21 +9,20 @@
 //! Sequencer provides a mechanism for executing sequences of
 //! actions in a flexible way.
 //!
-//! Sequencer is useful for automating some types of workflow
-//! or as the basis for a macro system for an application.
-//!
-//! Actions can provide textual descriptions of what they are and
-//! what they are doing, so the application can provide a richer
-//! UI, informing the user of what is going to happen.
-//!
 //! Possible uses:
 //!
+//! * Workflow automation.
+//! * The basis of a macro system for an application.
 //! * Sequencing animations or effects.
 //! * Recording actions as they're performed within an application
 //!   for playback, editing or repeating. An example of this can
 //!   be seen in [Bret Victor]'s [Talk Addendum] about his Drawing Dynamic
 //!   Visualizations work as well as applications like [Reform] which have
 //!   been inspired by it. (This approach was also used in [Data Wrangler].)
+//!
+//! Actions can provide textual descriptions of what they are and
+//! what they are doing, so the application can provide a richer
+//! UI, informing the user of what is going to happen.
 //!
 //! Currently, only actions or sequences of actions can be
 //! executed. Sequences can be nested.
