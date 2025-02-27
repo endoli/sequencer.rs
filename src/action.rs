@@ -4,7 +4,7 @@
 // option. This file may not be copied, modified, or distributed
 // except according to those terms.
 
-/// The result of `Action.step`.
+/// The result of [`Action.step`].
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub enum StepStatus {
     /// Stepping is incomplete and should be called again.
@@ -19,7 +19,7 @@ pub trait Action {
     ///
     /// This is typically invoked by the [`Sequence`].
     ///
-    /// [`Sequence`]: struct.Sequence.html
+    /// [`Sequence`]: crate::Sequence
     fn execute(&self);
 
     /// Execute one step of an action.
@@ -30,7 +30,7 @@ pub trait Action {
     /// This is also used for stepping through a [`Sequence`]
     /// of actions.
     ///
-    /// [`Sequence`]: struct.Sequence.html
+    /// [`Sequence`]: crate::Sequence
     fn step(&mut self) -> StepStatus {
         self.execute();
         StepStatus::Complete

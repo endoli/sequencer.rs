@@ -49,12 +49,10 @@
 //!   an action and allow them to be fed into a subsequent action.
 //! * Consider removing [`execute`] and only having [`step`].
 //!
-//! [`Action`]: trait.Action.html
 //! [Bret Victor]: http://worrydream.com/
 //! [Data Wrangler]: http://vis.stanford.edu/wrangler/
-//! [`execute`]: trait.Action.html#tymethod.execute
+//! [`execute`]: Action::execute
 //! [Reform]: https://github.com/laszlokorte/reform-swift
-//! [`Sequence`]: struct.Sequence.html
 //! [`step`]: trait.Action.html#method.step
 //! [Talk Addendum]: http://worrydream.com/DrawingDynamicVisualizationsTalkAddendum/
 

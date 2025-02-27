@@ -12,7 +12,7 @@ use crate::action::{Action, StepStatus};
 /// can be nested within themselves to provide some structure
 /// or hierarchy.
 ///
-/// [actions]: trait.Action.html
+/// [actions]: Action
 pub struct Sequence {
     actions: Vec<Box<dyn Action>>,
     step: Option<usize>,
