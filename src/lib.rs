@@ -66,8 +66,8 @@
 mod action;
 mod sequence;
 
-pub use self::action::Action;
-pub use self::sequence::Sequence;
+pub use crate::action::Action;
+pub use crate::sequence::Sequence;
 
 #[cfg(test)]
 mod tests {

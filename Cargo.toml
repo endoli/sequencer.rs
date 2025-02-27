@@ -9,5 +9,6 @@ keywords = ["commands", "script", "macro"]
 documentation = "http://endoli.github.io/sequencer.rs/"
 homepage = "https://github.com/endoli/sequencer.rs"
 repository = "https://github.com/endoli/sequencer.rs"
+edition = "2021"
 
 [dependencies]
