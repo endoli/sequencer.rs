@@ -14,7 +14,7 @@ use action::{Action, StepStatus};
 ///
 /// [actions]: trait.Action.html
 pub struct Sequence {
-    actions: Vec<Box<Action>>,
+    actions: Vec<Box<dyn Action>>,
     step: Option<usize>,
 }
 
